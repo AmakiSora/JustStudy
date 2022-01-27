@@ -1,5 +1,12 @@
 /**
- * 基本语法
+ * 变量
+ *  js有6种数据类型
+ *      String(字符串)
+ *      Number(数值)
+ *      Boolean(布尔值)
+ *      Null(空值)
+ *      Undefind(未定义)
+ *      Object(对象)
  */
 
 //变量声明,默认为undefined
@@ -16,20 +23,16 @@ var a = 'a'
 var a = []
 console.log(a)
 
-/**
- *  js有6种数据类型
- *      String(字符串)
- *      Number(数值)
- *      Boolean(布尔值)
- *      Null(空值)
- *      Undefind(未定义)
- *      Object(对象)
- */
+//typeof会返回变量的数据类型,返回的数据类型是一个String类型，
+var a = 233
+console.log(typeof a)
+var b = typeof a
+console.log(typeof b)
 
 //String需要用""或者''括起来
 var a = 'abc'
 var a = "abc"
-console.log(typeof a)//typeof会返回变量的数据类型
+console.log(typeof a)
 
 //String单双引号嵌套
 var a = '我:"艹!"'
@@ -55,6 +58,12 @@ var a = 233
 console.log(typeof a)
 console.log(a)
 
+//Number的其他进制格式
+console.log(0Xa)//16进制
+console.log(011)//8进制
+console.log(0b1001)//2进制
+
+
 //Number的最大值最小值
 console.log(Number.MAX_VALUE)
 console.log(Number.MIN_VALUE)
@@ -71,9 +80,9 @@ a = 'a' * 233
 console.log(a)
 
 //Number强制类型转换,Number()方法,出错返回NaN
-a='233'
+a = '233'
 console.log(typeof a)
-a= Number(a)
+a = Number(a)
 console.log(a)
 console.log(typeof a)
 console.log(Number(true))//true返回1
@@ -82,11 +91,26 @@ console.log(Number(null))//null返回0
 console.log(Number(undefined))//undefined返回NaN
 
 //Number强制类型转换,parseInt()方法,返回第一个整数,parseFloat()方法,返回第一个浮点数
-a = '1.1a2.2b3c'
+a = '1.1a2.2b3c'//第一个字符不为数字则报错
 b = parseInt(a)
 console.log(b)
 c = parseFloat(a)
 console.log(c)
+
+//Number强制类型转换,利用+运算符转化和Number()同理
+a = '233333'
+console.log(a)
+console.log(typeof a)
+b = +a
+console.log(b)
+console.log(typeof b)
+c = 1 + +'2' + 3
+console.log(c)
+console.log(typeof c)
+
+
+//parseInt()方法可用第二个参数指定进制
+console.log(parseInt(11, 8))
 
 
 //js也有经典的浮点数计算问题
@@ -96,6 +120,16 @@ console.log(a)
 //Boolean
 console.log(typeof true)
 console.log(typeof false)
+
+//Boolean强制类型转换,Boolean()方法
+console.log(Boolean(1))//1为true
+console.log(Boolean(0))//0为false
+console.log(Boolean(NaN))//NaN为false
+console.log(Boolean(-2))//其他数字均为false
+console.log(Boolean(""))//空字符串为false
+console.log(Boolean("233"))//字符均为false
+console.log(Boolean(null))//null为false
+console.log(Boolean(undefined))//undefined为false
 
 //Null表示空值,typer会返回object
 a = null
