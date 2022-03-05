@@ -7,6 +7,8 @@
  *      Null(空值)
  *      Undefind(未定义)
  *      Object(对象)
+ *
+ *  全局变量会在浏览器关闭后才销毁,局部变量用完后自动销毁
  */
 
 //变量声明,默认为undefined
@@ -141,3 +143,13 @@ a = undefined
 console.log(a)
 console.log(typeof a)
 
+//变量的预解析
+console.log(vv);
+var vv = 1;//如果没有这句话,上一行代码会报错
+/*
+    变量提升:把所有声明的变量提升到当前作用域的最前面,但不会提升赋值操作
+    上面的代码的执行顺序是
+    var vv
+    console.log(vv);
+    vv = 1
+ */
