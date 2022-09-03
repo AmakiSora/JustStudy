@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="btn1" onclick="alert('按钮被点击')">按钮1</button>
+<button id="btn2" name="b2Name">按钮2</button>
+<div id="div1">
+    <div id="div2">
+        div2
+    </div>
+</div>
+<script type="text/javascript">
+    /**
+     * 文档对象模型(Document Object Model)
+     * js通过DOM来对html文档进行操作
+     */
+
+    /*
+        浏览器已经为我们提供了 文档节点 对象,这个对象是window属性
+        可以在页面中直接使用,文档节点代表的是整个页面
+     */
+    console.log(document)
+
+    //获取 一个 按钮1 对象(通过id)
+    var btn1 = document.getElementById("btn1");
+    //修改按钮1名字
+    console.log(btn1.innerHTML)
+    btn1.innerHTML = "修改按钮1"
+
+    //获取一组 元素节点 对象(通过标签名)
+    var btns1 = document.getElementsByTagName("button")
+    console.log(btns1)
+
+    //获取 一组 元素节点 对象(通过name属性)
+    var btns2 = document.getElementsByName("b2Name")
+    console.log(btns2)
+
+    //获取 元素节点 的子节点
+    var div1 = document.getElementById("div1");
+    div1.getElementsByTagName("div")
+    div1.childNodes//当前节点的所有子节点
+    div1.firstChild//当前节点的第一个子节点
+    div1.lastChild//当前节点的最后一个子节点
+    div1.parentNode//当前节点的父节点
+    div1.previousSibling//当前节点的前一个兄弟节点
+    div1.nextSibling//当前节点的后一个兄弟节点
+
+    //增删改查就不详细解释了,查文档吧!
+
+    /*
+        事件:用户与浏览器之间的交互行为,如:点击事件,鼠标移动,关闭窗口等
+        我们可在事件的属性中设置js代码,当事件触发时,代码将执行
+    */
+    var btn2 = document.getElementById("btn2");
+    //为按钮2绑定事件
+    btn2.onclick = function () {
+        alert("绑定事件")
+    }
+    //注意:浏览器的加载顺序是自上而下的,读取到一行就运行一行
+    //当script标签在页面上边(如head里),代码执行时,可能页面还未加载完成,从而导致失败
+
+    //onload事件会在整个页面加载完成后触发(仅支持image,layer,window对象)
+    window.onload = function () {
+        alert("页面加载完成")
+    }
+</script>
+</body>
+</html>

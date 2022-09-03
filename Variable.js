@@ -62,7 +62,7 @@ console.log(a)
 
 //Number的其他进制格式
 console.log(0Xa)//16进制
-console.log(011)//8进制
+console.log(0o11)//8进制
 console.log(0b1001)//2进制
 
 
